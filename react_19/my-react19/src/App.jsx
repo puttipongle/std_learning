@@ -1,16 +1,20 @@
 import { useState } from "react";
 
 function App() {
-  const name = "Aun";
-  const [age, setAge] = useState(10)
+  const [data, setData] = useState([
+    { id: 1, name: "aun", gender: "male" },
+    { id: 2, name: "num", gender: "female" },
+    { id: 3, name: "fix", gender: "male" },
+  ]);
 
   return (
     <>
-      <h1>Learning React 19 by {name}</h1>
-      <p>Age: {age}</p>
-      <button onClick={() => setAge(age + 1)}>เพิ่มอายุ</button>
-      <button onClick={() => setAge(age - 1)}>ลดอายุ</button>
-      <button onClick={() => setAge(10)}>reset</button>
+      <h1>number {data.length}</h1>
+      <ul>
+        {data.map((item) => (
+          <li key={item.id}>{item.name} | {item.gender}</li>
+        ))}
+      </ul>
     </>
   )
 }
