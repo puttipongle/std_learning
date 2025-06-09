@@ -2,11 +2,13 @@ import Header from "./components/Header";
 import Personlist from "./components/Personlist";
 
 function App() {
-  
+
   return (
     <>
-    <Header/>
-    <Personlist/>
+      <Header />
+      <main>
+        <Personlist />
+      </main>
     </>
   )
 }
