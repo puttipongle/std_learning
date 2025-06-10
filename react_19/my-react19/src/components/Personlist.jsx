@@ -1,6 +1,8 @@
 import { useState } from "react";
 import boy from "../assets/boy.svg";
 import girl from "../assets/girl.svg";
+import "./Personlist.css"
+
 
 function Personlist() {
     const [data, setData] = useState([
@@ -13,17 +15,21 @@ function Personlist() {
     const [show, setShow] = useState(true);
 
     return (
-        <>
-            <h1>number {data.length}</h1>
+        <div className="container">
+            <div className="header">
+            <h2>จำนวนสมาชิก {data.length} คน</h2>
             <button onClick={() => setShow(!show)}>{show ? "hidden" : "show"}</button>
+            </div>
             <ul>
                 {show && data.map((item) => (
                     <li key={item.id}>
                         <img src={item.gender == "male" ? boy : girl} width={50} height={50} />
-                        {item.name}</li>
+                        <p>{item.name}</p>
+                        <div className="control"><button>ลบ</button></div>
+                        </li>
                 ))}
             </ul>
-        </>
+        </div>
     )
 }
 
