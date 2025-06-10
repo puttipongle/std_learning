@@ -13,11 +13,15 @@ function Personlist() {
     ]);
 
     const [show, setShow] = useState(true);
-
+    const myStyle={
+        color:"blue",
+        fontSize:"20px"
+    }
+    
     return (
         <div className="container">
             <div className="header">
-            <h2>จำนวนสมาชิก {data.length} คน</h2>
+            <h2 style={{color:"red",fontSize:"30px" }}>จำนวนสมาชิก {data.length} คน</h2>
             <button onClick={() => setShow(!show)}>{show ? "hidden" : "show"}</button>
             </div>
             <ul>
