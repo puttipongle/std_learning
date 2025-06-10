@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Personlist from "./components/Personlist";
 import "./App.css";
 import { useState } from "react";
+import Addform from "./components/Addform";
 
 function App() {
   const [data, setData] = useState([
@@ -20,6 +21,7 @@ function App() {
     <div className="app">
       <Header title="My Application" />
       <main>
+        <Addform/>
         <Personlist data={data} deleteUser={deleteUser} />
       </main>
     </div>
