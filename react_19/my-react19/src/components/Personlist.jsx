@@ -13,24 +13,24 @@ function Personlist() {
     ]);
 
     const [show, setShow] = useState(true);
-    const myStyle={
-        color:"blue",
-        fontSize:"20px"
+    const myStyle = {
+        color: "blue",
+        fontSize: "20px"
     }
-    
+
     return (
         <div className="container">
             <div className="header">
-            <h2 style={{color:"red",fontSize:"30px" }}>จำนวนสมาชิก {data.length} คน</h2>
-            <button onClick={() => setShow(!show)}>{show ? "hidden" : "show"}</button>
+                <h2 style={{ color: "red", fontSize: "30px" }}>จำนวนสมาชิก {data.length} คน</h2>
+                <button onClick={() => setShow(!show)}>{show ? "hidden" : "show"}</button>
             </div>
             <ul>
                 {show && data.map((item) => (
-                    <li key={item.id}>
+                    <li key={item.id} style={{borderStyle:"solid",borderColor:item.gender == "male" ? "green" : "pink"}}>
                         <img src={item.gender == "male" ? boy : girl} width={50} height={50} />
                         <p>{item.name}</p>
                         <div className="control"><button>ลบ</button></div>
-                        </li>
+                    </li>
                 ))}
             </ul>
         </div>
