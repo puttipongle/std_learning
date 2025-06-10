@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Personlist.css"
 import User from "./User"
 
-function Personlist({data}) {
+function Personlist({ data, deleteUser }) {
 
     const [show, setShow] = useState(true);
     const myStyle = {
@@ -18,7 +18,7 @@ function Personlist({data}) {
             </div>
             <ul>
                 {show && data.map((item) => (
-                    <User key={item.id} item={item}/>
+                    <User key={item.id} item={item} deleteUser={deleteUser} />
                 ))}
             </ul>
         </div>

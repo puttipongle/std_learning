@@ -4,18 +4,23 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-    const [data, setData] = useState([
-          { id: 1, name: "aun", gender: "male" },
-          { id: 2, name: "num", gender: "female" },
-          { id: 3, name: "fix", gender: "male" },
-          { id: 4, name: "ploy", gender: "female" },
-      ]);
+  const [data, setData] = useState([
+    { id: 1, name: "aun", gender: "male" },
+    { id: 2, name: "num", gender: "female" },
+    { id: 3, name: "fix", gender: "male" },
+    { id: 4, name: "ploy", gender: "female" },
+  ]);
+
+  function deleteUser(id) {
+    const result = data.filter((user) => user.id !== id); //array ใหม่
+    setData(result);
+  }
 
   return (
     <div className="app">
-      <Header title="My Application"/>
+      <Header title="My Application" />
       <main>
-        <Personlist data={data}/>
+        <Personlist data={data} deleteUser={deleteUser} />
       </main>
     </div>
   )
