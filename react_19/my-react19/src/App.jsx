@@ -1,14 +1,21 @@
 import Header from "./components/Header";
 import Personlist from "./components/Personlist";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+    const [data, setData] = useState([
+          { id: 1, name: "aun", gender: "male" },
+          { id: 2, name: "num", gender: "female" },
+          { id: 3, name: "fix", gender: "male" },
+          { id: 4, name: "ploy", gender: "female" },
+      ]);
 
   return (
     <div className="app">
-      <Header />
+      <Header title="My Application"/>
       <main>
-        <Personlist />
+        <Personlist data={data}/>
       </main>
     </div>
   )

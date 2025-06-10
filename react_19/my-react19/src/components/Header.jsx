@@ -1,9 +1,9 @@
 import "./Header.css";
 
-function Header(){
+function Header(props){
     return (
         <nav>
-        <h1>My App</h1>
+        <h1>{props.title}</h1>
         <button>Light/Dark</button>
         </nav>
     );
