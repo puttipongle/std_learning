@@ -2,7 +2,7 @@ import "./Addform.css";
 import { useState } from "react";
 
 function Addform(){
-    const [name,setName] = useState();
+    const [name,setName] = useState("");
     const [gender,setGender] = useState("male");
 
     function saveData(e){
@@ -22,7 +22,7 @@ function Addform(){
                     <option value="male">ชาย</option>
                     <option value="female">หญิง</option>
                 </select>
-                <button type="submit" className="btn-save">บันทึก</button>
+                <button type="submit" className="btn-save" disabled={name.trim()===""}>บันทึก</button>
             </form>
         </section>
     );
