@@ -16,12 +16,12 @@ function App() {
     const result = data.filter((user) => user.id !== id); //array ใหม่
     setData(result);
   }
+ const [theme, setTheme] = useState(localStorage.getItem("mode") || "light");
 
   useEffect(() => {
-    console.log("Render Component");
-  }, [data]);
-
-  const [theme, setTheme] = useState("light");
+    //console.log("บันทึกการตั้งค่าโหมด");
+    localStorage.setItem("mode",theme);
+  }, [theme]);
 
   return (
     <div className={theme}>
