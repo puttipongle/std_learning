@@ -1,4 +1,6 @@
 import "./Header.css";
+import { HiSun } from "react-icons/hi";
+import { FaMoon } from "react-icons/fa";
 
 function Header(props){
 
@@ -16,7 +18,10 @@ function Header(props){
     return (
         <nav>
         <h1>{props.title}</h1>
-        <button onClick={toggleTheme}>สลับโหมด : {theme}</button>
+        <span onClick={toggleTheme}>
+            {theme==="light" ? <HiSun size={30}/> : <FaMoon size={30}/>}
+        </span>
+        
         </nav>
     );
 };
