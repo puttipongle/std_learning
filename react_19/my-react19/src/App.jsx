@@ -10,8 +10,6 @@ function App() {
     { id: 2, name: "num", gender: "female" },
     { id: 3, name: "fix", gender: "male" },
     { id: 4, name: "ploy", gender: "female" },
-    { id: 5, name: "joy", gender: "female" },
-    { id: 6, name: "joe", gender: "male" },
   ]);
 
   function deleteUser(id) {
@@ -23,7 +21,7 @@ function App() {
     <div className="app">
       <Header title="My Application" />
       <main>
-        <Addform/>
+        <Addform data={data} setData={setData}/>
         <Personlist data={data} deleteUser={deleteUser} />
       </main>
     </div>

@@ -1,17 +1,23 @@
 import "./Addform.css";
 import { useState } from "react";
 
-function Addform(){
+function Addform(props){
     const [name,setName] = useState("");
     const [gender,setGender] = useState("male");
+
+    const {data,setData} = props;
 
     function saveData(e){
         e.preventDefault();
         const person={
+            id:data.length+1,
             name:name,
             gender:gender,
         }
         console.log(person);
+        setData([...data,person]); //เลือกมาใช้งานก่อนแล้วนำข้อมูลล่าสุดต่อท้าย
+        setName("");
+        setGender("male");
     }
     return(
         <section className="container">
