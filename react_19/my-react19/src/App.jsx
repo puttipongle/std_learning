@@ -19,15 +19,19 @@ function App() {
 
   useEffect(() => {
     console.log("Render Component");
-  },[data])
+  }, [data]);
+
+  const [theme, setTheme] = useState("light");
 
   return (
-    <div className="app">
-      <Header title="My Application" />
-      <main>
-        <Addform data={data} setData={setData} />
-        <Personlist data={data} deleteUser={deleteUser} />
-      </main>
+    <div className={theme}>
+      <div className="app">
+        <Header title="My Application" theme={theme} setTheme={setTheme} />
+        <main>
+          <Addform data={data} setData={setData} />
+          <Personlist data={data} deleteUser={deleteUser} />
+        </main>
+      </div>
     </div>
   )
 }
