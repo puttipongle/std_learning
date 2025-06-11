@@ -10,7 +10,7 @@ function Addform(props){
     function saveData(e){
         e.preventDefault();
         const person={
-            id:data.length+1,
+            id:Math.floor(Math.random()*1000), //random id แก้ปัญหาไอดีซ้ำ
             name:name,
             gender:gender,
         }

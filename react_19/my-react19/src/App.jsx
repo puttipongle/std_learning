@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Personlist from "./components/Personlist";
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Addform from "./components/Addform";
 
 function App() {
@@ -17,11 +17,15 @@ function App() {
     setData(result);
   }
 
+  useEffect(() => {
+    console.log("Render Component");
+  },[data])
+
   return (
     <div className="app">
       <Header title="My Application" />
       <main>
-        <Addform data={data} setData={setData}/>
+        <Addform data={data} setData={setData} />
         <Personlist data={data} deleteUser={deleteUser} />
       </main>
     </div>
