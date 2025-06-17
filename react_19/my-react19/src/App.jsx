@@ -26,7 +26,7 @@ function App() {
   return (
     <div className={theme}>
       <div className="app">
-        <Header title="My Application" theme={theme} setTheme={setTheme} />
+        <Header title="My Application Personlists" theme={theme} setTheme={setTheme} />
         <main>
           <Addform data={data} setData={setData} />
           <Personlist data={data} deleteUser={deleteUser} />
